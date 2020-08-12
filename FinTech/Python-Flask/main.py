@@ -1,6 +1,6 @@
 from flask import Flask, render_template,session, redirect, url_for, request
 import pandas as pd
-import finance_control as fc
+
 
 app = Flask(__name__)
 

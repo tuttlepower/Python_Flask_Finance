@@ -10,9 +10,9 @@
   {% extends "template.html" %}
   {% block content %}
   <div>
-    <form method="POST">
-      <div class="row">
-        <div class="col">
+    <form  class = "jumbotron" method="POST">
+      <div class="row ">
+        <div class="col ">
           <input type="text" class="form-control" id="ticker" placeholder="Company Ticker" name="ticker">
         </div>
         <div class="col">
@@ -38,13 +38,19 @@
   <p>{{ticker}}</p>
   <p>{{date}}</p>
   <p>{{price}}</p>
-  <div id='myDiv'>
+  <div class = "jumbotron content-justified-center"><div id='myDiv'></div>
+  
     <!-- Plotly chart will be drawn inside this DIV -->
   </div>
   <script>
   var trace1 = {
-      x: {{price}},
+      x: [1, 16, 20, 27],
       y: [10, 15, 13, 17],
+      type: 'scatter'
+    };
+    var trace2 = {
+      x: [2, 26, 30, 47],
+      y: [10, 12, 16, 27],
       type: 'scatter'
     };
 
