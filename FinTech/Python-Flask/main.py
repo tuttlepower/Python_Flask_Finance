@@ -18,7 +18,7 @@ def test():
         ticker = request.form['ticker']
         timePeriod = request.form['time']
         print(ticker)
-        return render_template("test.html", ticker=ticker,date = fc.returnsDates(ticker,timePeriod),price = fc.returnsPrices(ticker,timePeriod))
+        return render_template("test.html",)
     return render_template("test.html")
 
 @app.route("/chartJSTest", methods=['GET', 'POST'])
@@ -26,7 +26,9 @@ def chartJSTest():
     if request.method =='POST':
         ticker = request.form['ticker']
         timePeriod = request.form['time']
+        #proof of concept. The Post is working
         print(ticker)
+        print(timePeriod)
     return render_template("chartJSTest.html",)
     
 if __name__ == "__main__":
