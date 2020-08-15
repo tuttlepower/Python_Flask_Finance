@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Test</title>
+</head>
+
+<body>
+  {% extends "template.html" %}
+  {% block content %}
+  <div>
+    <form method="POST">
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" id="ticker" placeholder="Company Ticker" name="ticker">
+        </div>
+        <div class="col">
+          <select id="time" name="time" class="custom-select">
+            <option selected>Select a Time period</option>
+            <option value="1d">1d</option>
+            <option value="5d">5d</option>
+            <option value="1mo">1mo</option>
+            <option value="3mo">3mo</option>
+            <option value="6mo">6mo</option>
+            <option value="1y">1y</option>
+            <option value="2y">2y</option>
+            <option value="5y">5y</option>
+            <option value="10y">10y</option>
+            <option value="ytd">ytd</option>
+            <option value="max">max</option>
+          </select>
+        </div>
+        <input type="submit" class="btn btn-outline-dark" value="Submit">
+      </div>
+    </form>
+  </div>
+<br>
+  <canvas class = "jumbotron" id="myChart"></canvas>
+  <script>var ctx = document.getElementById("myChart");
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        datasets: [
+          {
+            label: "Tanjung Perak",
+            fill: false,
+            lineTension: 0.1,
+            backgroundColor: "rgba(75,192,192,0.4)",
+            borderColor: "rgba(75,192,192,1)",
+            borderCapStyle: 'round',
+            borderWidth: 1,
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: "rgba(75,192,192,1)",
+            pointBackgroundColor: "#fff",
+            pointBorderWidth: 5,
+            pointHoverRadius: 6,
+            pointHoverBackgroundColor: "rgba(75,192,192,1)",
+            pointHoverBorderColor: "rgba(220,220,220,1)",
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
+            data: [65, 59, 80, 81, 56, 55, 40],
+            spanGaps: false,
+          },
+          {
+            label: "Gresik",
+            fill: false,
+            lineTension: 0.1,
+            backgroundColor: "#FFCA28",
+            borderColor: "#FF6F00",
+            borderCapStyle: 'round',
+            borderWidth: 1,
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: "#FF6F00",
+            pointBackgroundColor: "#fff",
+            pointBorderWidth: 5,
+            pointHoverRadius: 6,
+            pointHoverBackgroundColor: "#FF6F00",
+            pointHoverBorderColor: "rgba(220,220,220,1)",
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
+            data: [15, 20, 35, 25, 40, 45, 50],
+            spanGaps: false,
+          },
+          {
+            label: "Bima",
+            fill: false,
+            lineTension: 0.1,
+            backgroundColor: "#E91E63",
+            borderColor: "#E91E63",
+            borderCapStyle: 'round',
+            borderWidth: 1,
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: "#AD1457",
+            pointBackgroundColor: "#fff",
+            pointBorderWidth: 5,
+            pointHoverRadius: 6,
+            pointHoverBackgroundColor: "#AD1457",
+            pointHoverBorderColor: "rgba(220,220,220,1)",
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
+            data: [40, 42, 43, 39, 30, 41, 20],
+            spanGaps: false,
+          }
+        ]
+      },
+      options: {
+        legend: {
+          display: false
+        },
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            },
+            gridLines: {
+              display: false
+            }
+          }],
+          xAxes: [{
+            gridLines: {
+              display: false
+            }
+          }]
+        }
+      }
+    });
+  </script>
+  {% endblock %}
+</body>
+
+
+
+</html>
