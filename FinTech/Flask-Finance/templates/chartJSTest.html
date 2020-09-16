@@ -36,7 +36,10 @@
     </form>
   </div>
 <br>
-  <canvas class = "jumbotron" id="myChart"></canvas>
+<p>{{ticker}}</p>
+<p>{{timePeriod}}</p>
+<p>{{opens}}</p>
+  <canvas class = "list-group-item" id="myChart" style="position: relative; height:60vh; width:80vw"></canvas>
   <script>var ctx = document.getElementById("myChart");
     var myChart = new Chart(ctx, {
       type: 'line',
@@ -65,52 +68,7 @@
             pointHitRadius: 10,
             data: [65, 59, 80, 81, 56, 55, 40],
             spanGaps: false,
-          },
-          {
-            label: "Gresik",
-            fill: false,
-            lineTension: 0.1,
-            backgroundColor: "#FFCA28",
-            borderColor: "#FF6F00",
-            borderCapStyle: 'round',
-            borderWidth: 1,
-            borderDash: [],
-            borderDashOffset: 0.0,
-            borderJoinStyle: 'miter',
-            pointBorderColor: "#FF6F00",
-            pointBackgroundColor: "#fff",
-            pointBorderWidth: 5,
-            pointHoverRadius: 6,
-            pointHoverBackgroundColor: "#FF6F00",
-            pointHoverBorderColor: "rgba(220,220,220,1)",
-            pointHoverBorderWidth: 2,
-            pointRadius: 1,
-            pointHitRadius: 10,
-            data: [15, 20, 35, 25, 40, 45, 50],
-            spanGaps: false,
-          },
-          {
-            label: "Bima",
-            fill: false,
-            lineTension: 0.1,
-            backgroundColor: "#E91E63",
-            borderColor: "#E91E63",
-            borderCapStyle: 'round',
-            borderWidth: 1,
-            borderDash: [],
-            borderDashOffset: 0.0,
-            borderJoinStyle: 'miter',
-            pointBorderColor: "#AD1457",
-            pointBackgroundColor: "#fff",
-            pointBorderWidth: 5,
-            pointHoverRadius: 6,
-            pointHoverBackgroundColor: "#AD1457",
-            pointHoverBorderColor: "rgba(220,220,220,1)",
-            pointHoverBorderWidth: 2,
-            pointRadius: 1,
-            pointHitRadius: 10,
-            data: [40, 42, 43, 39, 30, 41, 20],
-            spanGaps: false,
+            responsive: true,
           }
         ]
       },
@@ -124,12 +82,12 @@
               beginAtZero: true
             },
             gridLines: {
-              display: false
+              display: true
             }
           }],
           xAxes: [{
             gridLines: {
-              display: false
+              display: true
             }
           }]
         }

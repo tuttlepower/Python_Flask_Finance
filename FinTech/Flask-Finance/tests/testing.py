@@ -28,3 +28,12 @@ print(opt)
 #print(df.head())
 #plt.plot(df['lastPrice'], linewidth=1.0)
 #plt.show()
+
+test = get_yf_stock_price("tsla","max")
+df = pd.DataFrame(test, index=None)
+df['date']= df.index.values
+print(df.head())
+print(df['date'])
+
+plt.plot(df['date'],df['Open'])
+plt.show()
