@@ -3,6 +3,7 @@ import pandas as pd
 import StockDAO as DAO
 import Stock as Stock
 
+
 app = Flask(__name__)
 
 @app.route("/")
