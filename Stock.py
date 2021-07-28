@@ -1,4 +1,3 @@
-#Can you do OOP in Python? 
 class Stock:
     def __init__(self,date ,open,close, high, low, volume):
         self.date = date
