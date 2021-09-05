@@ -1,7 +1,9 @@
-from flask import Flask, render_template, session, redirect, url_for, request, jsonify, send_from_directory
-import flask_login
-from flask_login import LoginManager
 import os
+
+import flask_login
+from flask import (Flask, jsonify, redirect, render_template, request,
+                   send_from_directory, session, url_for)
+from flask_login import LoginManager
 
 app = Flask(__name__)
 app.secret_key = 'super secret string'  # Change this!
