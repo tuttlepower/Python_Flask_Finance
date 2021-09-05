@@ -1,8 +1,12 @@
+""" 
+Middleman app Python_Flask_Finance
+Will be incorporating Plaid to see investments and bank accounts all in one spot
+"""
 import os
 
 import flask_login
-from flask import (Flask, jsonify, redirect, render_template, request,
-                   send_from_directory, session, url_for)
+from flask import (Flask, redirect, render_template, request,
+                   send_from_directory, url_for)
 from flask_login import LoginManager
 
 app = Flask(__name__)
@@ -16,6 +20,7 @@ users = {'admin': {'password': 'pass'}}
 
 
 class User(flask_login.UserMixin):
+    """Temp User class for starting to tackle login functionality, will move this out later"""
     pass
 
 
