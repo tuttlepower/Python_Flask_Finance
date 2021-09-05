@@ -1,6 +1,4 @@
 from flask import Flask, render_template, session, redirect, url_for, request, jsonify
-import pandas as pd
-
 
 app = Flask(__name__)
 
