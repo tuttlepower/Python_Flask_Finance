@@ -21,6 +21,7 @@ class User(flask_login.UserMixin):
 
 @login_manager.user_loader
 def user_loader(email):
+    """Login Management, checks that user exists"""
     if email not in users:
         return
 
@@ -31,6 +32,7 @@ def user_loader(email):
 
 @login_manager.request_loader
 def request_loader(request):
+    """Login Management, checks that user exists"""
     email = request.form.get('email')
     if email not in users:
         return
@@ -47,6 +49,7 @@ def request_loader(request):
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    """Serves Login Form and redirects."""
     if request.method == 'GET':
         return render_template("login.html")
 
@@ -62,17 +65,20 @@ def login():
 
 @app.route("/")
 def home():
+    """Serves Home Page."""
     return render_template("index.html")
 
 
 @app.route("/test", methods=['GET', 'POST'])
 @flask_login.login_required
 def test():
+    """Serves Test Page."""
     return render_template("test.html")
 
 
 @app.route('/favicon.ico')
 def favicon():
+    """Serves favicon."""
     return send_from_directory(os.path.join(app.root_path, 'static', 'images'),
                                'favicon.ico', mimetype='image/png')
 
