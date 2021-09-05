@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Home</title>
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <title>Home</title>
-</head>
+  <body>
+    {% extends "template.html" %} {% block content %}
 
-<body>
-  {% extends "template.html" %}
-  {% block content %}
+    <h1>Flask Plaid</h1>
 
-  <h1> Flask Plaid
-  </h1>
+    <p>
+      Try navigating to <a href="/login">"Login"</a> and entering admin as the
+      user, and pass as the password.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+      est laborum.
+    </p>
 
-  <p>Try navigating to <a href="/login">"Login"</a> and entering admin as the user, and pass as the password.</p>
-  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-  {% endblock %}
-</body>
-
+    {% endblock %}
+  </body>
 </html>
