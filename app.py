@@ -1,4 +1,4 @@
-""" 
+"""
 Middleman app Python_Flask_Finance
 Will be incorporating Plaid to see investments and bank accounts all in one spot
 """
@@ -59,7 +59,7 @@ def login():
         return render_template("login.html")
 
     email = request.form['email']
-    if request.form['password'] == users[email]['password']:
+    if email in users and request.form['password'] == users[email]['password']:
         user = User()
         user.id = email
         flask_login.login_user(user)
