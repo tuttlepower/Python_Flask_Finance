@@ -62,8 +62,9 @@ def login():
 def home():
     return render_template("index.html")
 
-@flask_login.login_required
+
 @app.route("/test", methods=['GET', 'POST'])
+@flask_login.login_required
 def test():
     return render_template("test.html")
 
