@@ -1,63 +1,59 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <title>Test</title>
-  </head>
 
-  <body>
-    {% extends "template.html" %} {% block content %}
-    <div>
-      <form class="jumbotron" method="POST">
-        <p>Congrats! This should only be accesible after logging in!</p>
-        <p>There is no functionality yet.</p>
-        <div class="row">
-          <div class="col">
-            <input
-              type="text"
-              class="form-control"
-              id="ticker"
-              placeholder="Company Ticker"
-              name="ticker"
-            />
-          </div>
-          <div class="col">
-            <select id="time" name="time" class="custom-select">
-              <option selected>Select a Time period</option>
-              <option value="1d">1d</option>
-              <option value="5d">5d</option>
-              <option value="1mo">1mo</option>
-              <option value="3mo">3mo</option>
-              <option value="6mo">6mo</option>
-              <option value="1y">1y</option>
-              <option value="2y">2y</option>
-              <option value="5y">5y</option>
-              <option value="10y">10y</option>
-              <option value="ytd">ytd</option>
-              <option value="max">max</option>
-            </select>
-          </div>
-          <input type="submit" class="btn btn-outline-dark" value="Submit" />
+<head>
+  <meta charset="utf-8" />
+  <title>Test</title>
+</head>
+
+<body>
+  {% extends "template.html" %} {% block content %}
+  <div>
+    <form class="jumbotron" method="POST">
+      <p>Congrats! This should only be accesible after logging in!</p>
+      <p>There is no functionality yet.</p>
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" id="ticker" placeholder="Company Ticker" name="ticker" />
         </div>
-      </form>
-    </div>
+        <div class="col">
+          <select id="time" name="time" class="custom-select">
+            <option selected>Select a Time period</option>
+            <option value="1d">1d</option>
+            <option value="5d">5d</option>
+            <option value="1mo">1mo</option>
+            <option value="3mo">3mo</option>
+            <option value="6mo">6mo</option>
+            <option value="1y">1y</option>
+            <option value="2y">2y</option>
+            <option value="5y">5y</option>
+            <option value="10y">10y</option>
+            <option value="ytd">ytd</option>
+            <option value="max">max</option>
+          </select>
+        </div>
+        <input type="submit" class="btn btn-outline-dark" value="Submit" />
+      </div>
+    </form>
+  </div>
 
-    <div class="jumbotron content-justified-center">
-      <div id="myDiv"></div>
+  <div class="jumbotron content-justified-center">
+    <div>
 
-      <!-- Plotly chart will be drawn inside this DIV -->
     </div>
     <script>
-      console.log({ df });
-      var trace1 = {
-        x: [1, 2, 3],
-        y: [2, 3, 4],
-        type: "scatter",
-      };
-      var data = [trace1];
-
-      Plotly.newPlot("myDiv", data);
+      const handler = Plaid.create({
+        token: 'GENERATED_LINK_TOKEN',
+        onSuccess: (public_token, metadata) => {},
+        onLoad: () => {},
+        onExit: (err, metadata) => {},
+        onEvent: (eventName, metadata) => {},
+        receivedRedirectUri: null,
+      });
     </script>
-    {% endblock %}
-  </body>
+    <!-- Plotly chart will be drawn inside this DIV -->
+  </div>
+  {% endblock %}
+</body>
+
 </html>
